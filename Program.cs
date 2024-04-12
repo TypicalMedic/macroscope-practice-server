@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.RateLimiting;
+using Microsoft.OpenApi.Models;
 using ServerSide.BusinessLogic;
 using ServerSide.BusinessLogic.Interfaces;
 using ServerSide.Controllers.Interfaces;
 using ServerSide.PalindromeValidator;
+using System.Reflection;
 using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,7 +30,19 @@ builder.Services.AddRateLimiter(_ => _
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "Palindrome API",
+        Description = "An ASP.NET Core Web API для проверки палиндромов"
+    });
+
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+}
+    );
 builder.Services.AddScoped<IPalindromeService, PalindromeService>();
 builder.Services.AddScoped<IPalindromeValidator, PalindromeValidator>();
 

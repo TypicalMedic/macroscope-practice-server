@@ -30,6 +30,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
+      "launchUrl": "swagger",
       "commandLineArgs": "requestlimit=3",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
