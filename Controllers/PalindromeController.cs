@@ -11,10 +11,9 @@ namespace ServerSide.Controllers
     [EnableRateLimiting("Concurrency")]
     [Route("palindrome")]
 
-    public class PalindromeController(ILogger<PalindromeController> logger, IPalindromeService service) : ControllerBase
+    public class PalindromeController(IPalindromeService service) : ControllerBase
     {
 
-        private readonly ILogger<PalindromeController> _logger = logger;
         private readonly IPalindromeService _pService = service;
 
         /// <summary>
