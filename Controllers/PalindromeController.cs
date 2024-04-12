@@ -19,7 +19,7 @@ namespace ServerSide.Controllers
             _ignat = service;
         }
 
-        [HttpGet("check")]
+        [HttpPost("check")]
         [Consumes("application/json")]
         public async Task<ActionResult<bool>> Check([FromBody]string? input)
         {
