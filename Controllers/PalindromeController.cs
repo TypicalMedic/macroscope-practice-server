@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using ServerSide.Controllers.DTOs;
 using ServerSide.Controllers.Interfaces;
 
 namespace ServerSide.Controllers
 {
     [ApiController]
+    [EnableRateLimiting("Concurrency")]
     [Route("palindrome")]
     public class PalindromeController : ControllerBase
     {
