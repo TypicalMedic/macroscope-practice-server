@@ -5,7 +5,9 @@ namespace ServerSide.BusinessLogic
 {
     public class PalindromeService : IPalindromeService
     {
-        IPalindromeValidator _validator { get; set; }
+        readonly TimeSpan delay = TimeSpan.FromSeconds(1.5f);
+
+        private readonly IPalindromeValidator _validator;
         public PalindromeService(IPalindromeValidator validator)
         {
             _validator = validator;
@@ -13,7 +15,11 @@ namespace ServerSide.BusinessLogic
 
         public Task<bool> IsPalindrome(string value)
         {
-            return Task.Run(() => _validator.IsValid(value));
+            return Task.Run(async delegate
+            {
+                await Task.Delay(delay);
+                return _validator.IsValid(value);
+            });
         }
     }
 }
