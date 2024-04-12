@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
-using ServerSide.Controllers.DTOs;
 using ServerSide.Controllers.Interfaces;
 
 namespace ServerSide.Controllers
@@ -22,14 +21,14 @@ namespace ServerSide.Controllers
 
         [HttpGet("check")]
         [Consumes("application/json")]
-        public async Task<ActionResult<bool>> Check([FromBody] PalindromeDTO input)
+        public async Task<ActionResult<bool>> Check([FromBody]string? input)
         {
-            if(input.Value == null)
+            if(input == null)
             {
                 return BadRequest();
             }
 
-            return await _ignat.IsPalindrome(input.Value);
+            return await _ignat.IsPalindrome(input);
         }
     }
 }
