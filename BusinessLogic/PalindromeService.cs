@@ -1,5 +1,5 @@
 ﻿using ServerSide.BusinessLogic.Interfaces;
-using ServerSide.Controllers.Interfaces;
+using ServerSide.PalindromeValidator.Interfaces;
 
 namespace ServerSide.BusinessLogic
 {
