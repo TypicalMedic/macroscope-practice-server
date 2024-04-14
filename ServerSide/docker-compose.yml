@@ -1,0 +1,13 @@
+﻿version: '1.0'
+
+name: palindrome-container
+services:
+  server:
+    image: ggghfffg/palindrome-server-side:publish
+    container_name: server-container
+
+    environment:
+      ASPNETCORE_HTTP_PORTS: "8080"
+      REQUEST_LIMIT: ${REQUEST_LIMIT}
+    ports:
+      - 5015:8080
