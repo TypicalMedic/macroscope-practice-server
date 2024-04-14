@@ -3,15 +3,11 @@ using ServerSide.PalindromeValidator.Interfaces;
 
 namespace ServerSide.BusinessLogic
 {
-    public class PalindromeService : IPalindromeService
+    public class PalindromeService(IPalindromeValidator validator) : IPalindromeService
     {
         readonly TimeSpan delay = TimeSpan.FromSeconds(1.5f);
 
-        private readonly IPalindromeValidator _validator;
-        public PalindromeService(IPalindromeValidator validator)
-        {
-            _validator = validator;
-        }
+        private readonly IPalindromeValidator _validator = validator;
 
         public Task<bool> IsPalindrome(string value)
         {

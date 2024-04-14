@@ -28,9 +28,9 @@ namespace ServerSide.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status503ServiceUnavailable)]
-        public async Task<ActionResult<bool>> Check([FromBody]string? input)
+        public async Task<ActionResult<bool>> Check([FromBody] string? input)
         {
-            if(input == null)
+            if (input == null)
             {
                 return BadRequest();
             }

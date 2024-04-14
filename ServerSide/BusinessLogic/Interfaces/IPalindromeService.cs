@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace ServerSide.BusinessLogic.Interfaces
+﻿namespace ServerSide.BusinessLogic.Interfaces
 {
     public interface IPalindromeService
     {
