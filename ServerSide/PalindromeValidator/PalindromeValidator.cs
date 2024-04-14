@@ -1,4 +1,4 @@
-﻿using ServerSide.BusinessLogic.Interfaces;
+﻿using ServerSide.PalindromeValidator.Interfaces;
 
 namespace ServerSide.PalindromeValidator
 {
