@@ -10,12 +10,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ServerSideTests
+namespace ServerSideTests.UnitTests.Controllers
 {
     [TestClass]
     public class PalindromeControllerTests
     {
-        private readonly Mock<IPalindromeService> ServiceMock = new ();
+        private readonly Mock<IPalindromeService> ServiceMock = new();
 
 
         [TestMethod]

@@ -5,7 +5,7 @@ using ServerSide.BusinessLogic;
 using ServerSide.PalindromeValidator.Interfaces;
 using System.ComponentModel.DataAnnotations;
 
-namespace ServerSideTests
+namespace ServerSideTests.UnitTests.BusinessLogic
 {
     [TestClass]
     public class PalindromeServiceTests

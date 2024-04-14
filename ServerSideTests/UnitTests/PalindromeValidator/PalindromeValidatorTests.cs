@@ -1,11 +1,11 @@
 ﻿using ServerSide.PalindromeValidator;
 
-namespace ServerSideTests
+namespace ServerSideTests.UnitTests.PalindromeValidator
 {
     [TestClass]
     public class PalindromeValidatorTests
     {
-        readonly PalindromeValidator Validator = new();
+        readonly ServerSide.PalindromeValidator.PalindromeValidator Validator = new();
 
         [TestMethod]
         public void EmptyString_True()
