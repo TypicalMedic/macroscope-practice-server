@@ -1,4 +1,4 @@
-﻿namespace ServerSide.BusinessLogic.Interfaces
+﻿namespace ServerSide.PalindromeValidator.Interfaces
 {
     public interface IPalindromeValidator
     {

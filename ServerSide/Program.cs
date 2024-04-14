@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.OpenApi.Models;
 using ServerSide.BusinessLogic;
 using ServerSide.BusinessLogic.Interfaces;
-using ServerSide.Controllers.Interfaces;
 using ServerSide.PalindromeValidator;
+using ServerSide.PalindromeValidator.Interfaces;
 using System.Reflection;
 using System.Threading.RateLimiting;
 
@@ -27,7 +27,7 @@ builder.Services.AddRateLimiter(_ => _
     {
         options.PermitLimit = maxConnections; // максимальное количество текущих подключений
         options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
-        options.QueueLimit = 0; // в очереди никто не может ждать, сразу отправл€ем 502
+        options.QueueLimit = 0; // в очереди никто не может ждать, сразу отправл€ем 503
     }));
 
 builder.Services.AddControllers();
