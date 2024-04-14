@@ -12,11 +12,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
 
-ConfigurationManager configuration = builder.Configuration;
 int maxConnections;
-if (!int.TryParse(configuration["requestlimit"], out maxConnections) || maxConnections <= 0)
+if (!int.TryParse(Environment.GetEnvironmentVariable("REQUEST_LIMIT"), out maxConnections) || maxConnections <= 0)
 {
-    Console.WriteLine("Error: Command line argument 'requestlimit' should be positive int");
+    Console.WriteLine("Error: Command line argument 'REQUEST_LIMIT' should be positive int");
     Environment.Exit(1);
 }
 
