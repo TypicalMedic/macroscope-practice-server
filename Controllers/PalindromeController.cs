@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
-using ServerSide.Controllers.Interfaces;
+using ServerSide.BusinessLogic.Interfaces;
 
 namespace ServerSide.Controllers
 {
