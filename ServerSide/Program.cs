@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.HttpLogging;
+п»їusing Microsoft.AspNetCore.HttpLogging;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.OpenApi.Models;
 using ServerSide.BusinessLogic;
@@ -24,9 +24,9 @@ var concurrencyPolicy = "Concurrency";
 builder.Services.AddRateLimiter(_ => _
     .AddConcurrencyLimiter(policyName: concurrencyPolicy, options =>
     {
-        options.PermitLimit = maxConnections; // максимальное количество текущих подключений
+        options.PermitLimit = maxConnections; // РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ С‚РµРєСѓС‰РёС… РїРѕРґРєР»СЋС‡РµРЅРёР№
         options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
-        options.QueueLimit = 0; // в очереди никто не может ждать, сразу отправляем 503
+        options.QueueLimit = 0; // РІ РѕС‡РµСЂРµРґРё РЅРёРєС‚Рѕ РЅРµ РјРѕР¶РµС‚ Р¶РґР°С‚СЊ, СЃСЂР°Р·Сѓ РѕС‚РїСЂР°РІР»СЏРµРј 503
     }));
 
 builder.Services.AddControllers();
@@ -37,7 +37,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Version = "v1",
         Title = "Palindrome API",
-        Description = "An ASP.NET Core Web API для проверки палиндромов"
+        Description = "An ASP.NET Core Web API РґР»СЏ РїСЂРѕРІРµСЂРєРё РїР°Р»РёРЅРґСЂРѕРјРѕРІ"
     });
 
     var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";

@@ -1,11 +1,11 @@
-using Microsoft.AspNetCore.Mvc;
+п»їusing Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 using ServerSide.BusinessLogic.Interfaces;
 
 namespace ServerSide.Controllers
 {
     /// <summary>
-    /// Предоставляет функционал для работы с палиндромами
+    /// РџСЂРµРґРѕСЃС‚Р°РІР»СЏРµС‚ С„СѓРЅРєС†РёРѕРЅР°Р» РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ РїР°Р»РёРЅРґСЂРѕРјР°РјРё
     /// </summary>
     [ApiController]
     [EnableRateLimiting("Concurrency")]
@@ -17,11 +17,11 @@ namespace ServerSide.Controllers
         private readonly IPalindromeService _pService = service;
 
         /// <summary>
-        /// Проверка является ли входящая строка палиндромом
+        /// РџСЂРѕРІРµСЂРєР° СЏРІР»СЏРµС‚СЃСЏ Р»Рё РІС…РѕРґСЏС‰Р°СЏ СЃС‚СЂРѕРєР° РїР°Р»РёРЅРґСЂРѕРјРѕРј
         /// </summary>
-        /// <response code="200">Возвращает true, если строка - палиндром, иначе false</response>
-        /// <response code="400">Тело запроса не соответствует схеме</response>
-        /// <response code="503">Сервис не готов обработать запрос</response>
+        /// <response code="200">Р’РѕР·РІСЂР°С‰Р°РµС‚ true, РµСЃР»Рё СЃС‚СЂРѕРєР° - РїР°Р»РёРЅРґСЂРѕРј, РёРЅР°С‡Рµ false</response>
+        /// <response code="400">РўРµР»Рѕ Р·Р°РїСЂРѕСЃР° РЅРµ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ СЃС…РµРјРµ</response>
+        /// <response code="503">РЎРµСЂРІРёСЃ РЅРµ РіРѕС‚РѕРІ РѕР±СЂР°Р±РѕС‚Р°С‚СЊ Р·Р°РїСЂРѕСЃ</response>
         [HttpPost("check")]
         [Consumes("application/json")]
         [Produces("application/json")]
